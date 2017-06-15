@@ -8,7 +8,7 @@ A minecraft Resource Pack that replaces GUI windows with High Def versions.
 
 Some small elements from 'Isabella' by Brad 'Bonemouse' Morris used by permission.
 
-#### Licensing
+#### License
 
 Nellik's HighDef GUIs by [ScottKillen](http://no.link.yet") is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
 
