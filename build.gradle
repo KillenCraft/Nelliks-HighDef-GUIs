@@ -32,10 +32,10 @@ task zip111x(type:Zip) {
     duplicatesStrategy = 'exclude'
     classifier = '1.11.x'
 
-	from { 'common' } {
+	from { '1.11.x' } {
 		exclude '**/*.psd'
 	}
-	from { '1.11.x' } {
+	from { 'common' } {
 		exclude '**/*.psd'
 	}
 }
