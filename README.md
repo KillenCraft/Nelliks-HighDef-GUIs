@@ -19,6 +19,7 @@ Nellik's HighDef GUIs by [ScottKillen](http://no.link.yet") is licensed under a 
 ### Assembling this pack
 
 To assemble this pack manually:
+
 1. Clone this project.
 1. Execute `gradlew` in the base folder of this project.
 1. Check the `out/distributions` folder.
