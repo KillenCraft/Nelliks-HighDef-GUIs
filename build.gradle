@@ -25,14 +25,104 @@ apply plugin: 'com.github.moleksyuk.vcs-semantic-version'
 buildDir = 'out'
 archivesBaseName = 'Nelliks-HighDef-GUIs'
 
-defaultTasks 'clean', 'zip111x'
+defaultTasks 'packs'
 
-task zip111x(type:Zip) {
+task packs {
+	group = 'Build'
+	description "Builds all versions of the resource pack."
+	dependsOn 'v1_7_x'
+	dependsOn 'v1_8_x'
+	dependsOn 'v1_9_x'
+	dependsOn 'v1_10_x'
+	dependsOn 'v1_11_x'
+	dependsOn 'v1_12_x'
+}
 
+tasks.build.dependsOn "packs"
+
+task v1_7_x(type:Zip) {
     duplicatesStrategy = 'exclude'
+    group = 'Build'
+
+    description "Builds the pack for Minecraft 1.7.x"
+    classifier = '1.7.x'
+
+	from { '1.7.x' } {
+		exclude '**/*.psd'
+	}
+	from { 'common' } {
+		exclude '**/*.psd'
+	}
+}
+
+task v1_8_x(type:Zip) {
+    duplicatesStrategy = 'exclude'
+    group = 'Build'
+
+    description "Builds the pack for Minecraft 1.8.x"
+    classifier = '1.8.x'
+
+	from { '1.8.x' } {
+		exclude '**/*.psd'
+	}
+	from { 'common' } {
+		exclude '**/*.psd'
+	}
+}
+
+task v1_9_x(type:Zip) {
+    duplicatesStrategy = 'exclude'
+    group = 'Build'
+
+    description "Builds the pack for Minecraft 1.9.x"
+    classifier = '1.9.x'
+
+	from { '1.9.x' } {
+		exclude '**/*.psd'
+	}
+	from { 'common' } {
+		exclude '**/*.psd'
+	}
+}
+
+task v1_10_x(type:Zip) {
+    duplicatesStrategy = 'exclude'
+    group = 'Build'
+
+    description "Builds the pack for Minecraft 1.10.x"
+    classifier = '1.10.x'
+
+	from { '1.10.x' } {
+		exclude '**/*.psd'
+	}
+	from { 'common' } {
+		exclude '**/*.psd'
+	}
+}
+
+task v1_11_x(type:Zip) {
+    duplicatesStrategy = 'exclude'
+    group = 'Build'
+
+    description "Builds the pack for Minecraft 1.11.x"
     classifier = '1.11.x'
 
 	from { '1.11.x' } {
+		exclude '**/*.psd'
+	}
+	from { 'common' } {
+		exclude '**/*.psd'
+	}
+}
+
+task v1_12_x(type:Zip) {
+    duplicatesStrategy = 'exclude'
+    group = 'Build'
+
+    description "Builds the pack for Minecraft 1.12.x"
+    classifier = '1.12.x'
+
+	from { '1.12.x' } {
 		exclude '**/*.psd'
 	}
 	from { 'common' } {
