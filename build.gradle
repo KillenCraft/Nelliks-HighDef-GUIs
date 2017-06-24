@@ -25,17 +25,245 @@ apply plugin: 'com.github.moleksyuk.vcs-semantic-version'
 buildDir = 'out'
 archivesBaseName = 'Nelliks-HighDef-GUIs'
 
-defaultTasks 'clean', 'zip111x'
+defaultTasks 'packs'
 
-task zip111x(type:Zip) {
+task packs {
+	group = 'Build'
+	description "Builds all versions of the resource pack."
+	dependsOn 'v1_7'
+	dependsOn 'v1_7_ingame'
+	dependsOn 'v1_8'
+	dependsOn 'v1_8_ingame'
+	dependsOn 'v1_9'
+	dependsOn 'v1_9_ingame'
+	dependsOn 'v1_10'
+	dependsOn 'v1_10_ingame'
+	dependsOn 'v1_11'
+	dependsOn 'v1_11_ingame'
+	dependsOn 'v1_12'
+	dependsOn 'v1_12_ingame'
+}
 
+tasks.build.dependsOn 'packs'
+
+task v1_7(type:Zip) {
     duplicatesStrategy = 'exclude'
-    classifier = '1.11.x'
+    group = 'Build'
 
-	from { '1.11.x' } {
-		exclude '**/*.psd'
-	}
-	from { 'common' } {
-		exclude '**/*.psd'
-	}
+    description "Builds the pack for Minecraft 1.7"
+    classifier = '1.7'
+
+	from '1.7'
+	from 'common'
+	exclude '**/*.psd'
+	exclude '**/desktop.ini'
+}
+
+task v1_7_ingame(type:Zip) {
+    duplicatesStrategy = 'exclude'
+    group = 'Build'
+
+    description "Builds the pack for Minecraft 1.7 without widgets"
+    classifier = '1.7-ingame_only'
+
+	from '1.7'
+	from 'common'
+	exclude '**/*.psd'
+	exclude '**/desktop.ini'
+	exclude '**/bars.png'
+	exclude '**/icons.png'
+	exclude '**/resource_packs.png'
+	exclude '**/server_selection.png'
+	exclude '**/widgets.png'
+	exclude '**/world_selection.png'
+}
+
+task v1_8(type:Zip) {
+    duplicatesStrategy = 'exclude'
+    group = 'Build'
+
+    description "Builds the pack for Minecraft 1.8"
+    classifier = '1.8'
+
+	from '1.8'
+	from '1.7'
+	from 'common'
+	exclude '**/*.psd'
+	exclude '**/desktop.ini'
+}
+
+task v1_8_ingame(type:Zip) {
+    duplicatesStrategy = 'exclude'
+    group = 'Build'
+
+    description "Builds the pack for Minecraft 1.8 without widgets"
+    classifier = '1.8-ingame_only'
+
+	from '1.8'
+	from '1.7'
+	from 'common'
+	exclude '**/*.psd'
+	exclude '**/desktop.ini'
+	exclude '**/bars.png'
+	exclude '**/icons.png'
+	exclude '**/resource_packs.png'
+	exclude '**/server_selection.png'
+	exclude '**/widgets.png'
+	exclude '**/world_selection.png'
+}
+
+task v1_9(type:Zip) {
+    duplicatesStrategy = 'exclude'
+    group = 'Build'
+
+    description "Builds the pack for Minecraft 1.9"
+    classifier = '1.9'
+
+	from '1.9'
+	from '1.8'
+	from '1.7'
+	from 'common'
+	exclude '**/*.psd'
+	exclude '**/desktop.ini'
+}
+
+task v1_9_ingame(type:Zip) {
+    duplicatesStrategy = 'exclude'
+    group = 'Build'
+
+    description "Builds the pack for Minecraft 1.9 without widgets"
+    classifier = '1.9-ingame_only'
+
+	from '1.9'
+	from '1.8'
+	from '1.7'
+	from 'common'
+	exclude '**/*.psd'
+	exclude '**/desktop.ini'
+	exclude '**/bars.png'
+	exclude '**/icons.png'
+	exclude '**/resource_packs.png'
+	exclude '**/server_selection.png'
+	exclude '**/widgets.png'
+	exclude '**/world_selection.png'
+}
+
+task v1_10(type:Zip) {
+    duplicatesStrategy = 'exclude'
+    group = 'Build'
+
+    description "Builds the pack for Minecraft 1.10"
+    classifier = '1.10'
+
+	from '1.10'
+	from '1.9'
+	from '1.8'
+	from '1.7'
+	from 'common'
+	exclude '**/*.psd'
+	exclude '**/desktop.ini'
+}
+
+task v1_10_ingame(type:Zip) {
+    duplicatesStrategy = 'exclude'
+    group = 'Build'
+
+    description "Builds the pack for Minecraft 1.10 without widgets"
+    classifier = '1.10-ingame_only'
+
+	from '1.10'
+	from '1.9'
+	from '1.8'
+	from '1.7'
+	from 'common'
+	exclude '**/*.psd'
+	exclude '**/desktop.ini'
+	exclude '**/bars.png'
+	exclude '**/icons.png'
+	exclude '**/resource_packs.png'
+	exclude '**/server_selection.png'
+	exclude '**/widgets.png'
+	exclude '**/world_selection.png'
+}
+
+task v1_11(type:Zip) {
+    duplicatesStrategy = 'exclude'
+    group = 'Build'
+
+    description "Builds the pack for Minecraft 1.11"
+    classifier = '1.11'
+
+	from '1.11'
+	from '1.10'
+	from '1.9'
+	from '1.8'
+	from '1.7'
+	from 'common'
+	exclude '**/*.psd'
+	exclude '**/desktop.ini'
+}
+
+task v1_11_ingame(type:Zip) {
+    duplicatesStrategy = 'exclude'
+    group = 'Build'
+
+    description "Builds the pack for Minecraft 1.11 without widgets"
+    classifier = '1.11-ingame_only'
+
+	from '1.11'
+	from '1.10'
+	from '1.9'
+	from '1.8'
+	from '1.7'
+	from 'common'
+	exclude '**/*.psd'
+	exclude '**/desktop.ini'
+	exclude '**/bars.png'
+	exclude '**/icons.png'
+	exclude '**/resource_packs.png'
+	exclude '**/server_selection.png'
+	exclude '**/widgets.png'
+	exclude '**/world_selection.png'
+}
+
+task v1_12(type:Zip) {
+    duplicatesStrategy = 'exclude'
+    group = 'Build'
+
+    description "Builds the pack for Minecraft 1.12"
+    classifier = '1.12'
+
+	from '1.12'
+	from '1.11'
+	from '1.10'
+	from '1.9'
+	from '1.8'
+	from '1.7'
+	from 'common'
+	exclude '**/*.psd'
+	exclude '**/desktop.ini'
+}
+
+task v1_12_ingame(type:Zip) {
+    duplicatesStrategy = 'exclude'
+    group = 'Build'
+
+    description "Builds the pack for Minecraft 1.12 without widgets"
+    classifier = '1.12-ingame_only'
+
+	from '1.12'
+	from '1.11'
+	from '1.10'
+	from '1.9'
+	from '1.8'
+	from '1.7'
+	from 'common'
+	exclude '**/*.psd'
+	exclude '**/desktop.ini'
+	exclude '**/bars.png'
+	exclude '**/icons.png'
+	exclude '**/resource_packs.png'
+	exclude '**/server_selection.png'
+	exclude '**/widgets.png'
+	exclude '**/world_selection.png'
 }
