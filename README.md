@@ -4,6 +4,8 @@ A minecraft Resource Pack that replaces GUI windows with High Def versions.
 
 * * *
 
+![Nellik's HighDef GUIs](https://media-elerium.cursecdn.com/attachments/211/716/deck.png)
+
 #### Attribution
 
 Some small elements from 'Isabella' by Brad 'Bonemouse' Morris used by permission.
