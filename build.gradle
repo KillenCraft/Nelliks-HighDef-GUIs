@@ -23,7 +23,7 @@ semanticVersion {
 apply plugin: 'com.github.moleksyuk.vcs-semantic-version'
 
 buildDir = 'out'
-archivesBaseName = 'Nelliks-HighDef-GUIs'
+archivesBaseName = 'Nelliks-GUIs'
 
 defaultTasks 'packs'
 

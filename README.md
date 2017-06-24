@@ -1,10 +1,10 @@
-# Nellik's HighDef GUIs
+# Nellik's GUIs
 
 A minecraft Resource Pack that replaces GUI windows with High Def versions.
 
 * * *
 
-![Nellik's HighDef GUIs](https://media-elerium.cursecdn.com/attachments/211/716/deck.png)
+![Nellik's GUIs](https://media-elerium.cursecdn.com/attachments/211/716/deck.png)
 
 #### Attribution
 
@@ -12,7 +12,7 @@ Some small elements from 'Isabella' by Brad 'Bonemouse' Morris used by permissio
 
 #### License
 
-Nellik's HighDef GUIs by [ScottKillen](http://no.link.yet") is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
+Nellik's GUIs by [ScottKillen](http://no.link.yet") is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
 
 ![Creative Commons License](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)
 
