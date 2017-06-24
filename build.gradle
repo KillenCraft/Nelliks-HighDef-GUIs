@@ -16,7 +16,7 @@ project.extensions.create(SemanticVersionPluginExtension.NAME, SemanticVersionPl
 
 semanticVersion {
     major = 1
-    minor = 0
+    minor = 1
     preRelease = '' // optional
 }
 
