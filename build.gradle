@@ -16,14 +16,14 @@ project.extensions.create(SemanticVersionPluginExtension.NAME, SemanticVersionPl
 
 semanticVersion {
     major = 1
-    minor = 0
+    minor = 1
     preRelease = '' // optional
 }
 
 apply plugin: 'com.github.moleksyuk.vcs-semantic-version'
 
 buildDir = 'out'
-archivesBaseName = 'Nelliks-HighDef-GUIs'
+archivesBaseName = 'Nelliks-GUIs'
 
 defaultTasks 'packs'
 
