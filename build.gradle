@@ -2,25 +2,11 @@ buildscript {
     repositories {
         jcenter()
     }
-    dependencies {
-        classpath 'com.github.moleksyuk:vcs-semantic-version:1.1.3'
-    }
 }
 
 plugins {
 	id 'base'
 }
-
-import com.github.moleksyuk.plugin.SemanticVersionPluginExtension
-project.extensions.create(SemanticVersionPluginExtension.NAME, SemanticVersionPluginExtension)
-
-semanticVersion {
-    major = 1
-    minor = 2
-    preRelease = '' // optional
-}
-
-apply plugin: 'com.github.moleksyuk.vcs-semantic-version'
 
 buildDir = 'out'
 archivesBaseName = 'Nelliks-GUIs'
