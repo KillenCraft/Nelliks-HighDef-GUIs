@@ -54,7 +54,8 @@ We recommend the following workflow:
 
 Play with this project and you'll get the hang of it. We strive to do the following:
 
-  * You must contribute both the source Photoshop (.psd) file as well as the resulting .png GUI texture. These files should be kept side by side in the same folder, just like the project is currently structured.
+  * You **must** contribute both the source Photoshop (.psd) file as well as the resulting .png GUI texture. These files should be kept side by side in the same folder, just like the project is currently structured.
   * Your Photoshop files should follow good [Photoshop etiquette](http://www.creativebloq.com/photoshop/etiquette-2131974).
   * You must place the textures you design in the folder that corresponds to the earliest version of Minecraft that this GUI appeared.
+  * If a texture is dropped by future versions, or if a texture is renamed, you can exclude files from different minecraft versions of the pack by adding the obsolete texture to the `.exclude` file in the "assets" folder of the first version where the texture should sto appearing.
   * When possible (such as when adding new icons that will be ignored by earlier versions of Minecraft), choose to change the original file rather than creating a new fersion of the GUI.
