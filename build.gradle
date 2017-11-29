@@ -1,15 +1,13 @@
-buildscript {
-    repositories {
-        jcenter()
-    }
-}
+apply plugin: 'base'
 
-plugins {
-	id 'base'
-}
-
-buildDir = 'out'
-archivesBaseName = 'Nelliks-GUIs'
+def mcVersions = [
+    '1.7',
+    '1.8',
+    '1.9',
+    '1.10',
+    '1.11',
+    '1.12'
+]
 
 defaultTasks 'packs'
 
@@ -30,226 +28,216 @@ task packs {
 	dependsOn 'v1_12_ingame'
 }
 
-tasks.build.dependsOn 'packs'
+tasks.assemble.dependsOn 'packs'
+
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+def fileTreeMap = [:]
+fileTreeMap['common'] = makeTree('common')
+mcVersions.each { it ->
+    fileTreeMap[it] = makeTree(it)
+}
+
+def widgets = [
+    'assets/minecraft/textures/gui/container/bars.png',
+	'assets/minecraft/textures/gui/icons.png',
+	'assets/minecraft/textures/gui/resource_packs.png',
+	'assets/minecraft/textures/gui/server_selection.png',
+	'assets/minecraft/textures/gui/widgets.png',
+	'assets/minecraft/textures/gui/world_selection.png'
+]
+
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+task unpacked_v1_7(type: Copy){
+    duplicatesStrategy = 'exclude'
+	from fileTreeMap['1.7']
+	from fileTreeMap['common']
+    exclude excludeList(file('1.7/.exclude'))
+	into "${buildDir}/1.7"
+}
 
 task v1_7(type:Zip) {
-    duplicatesStrategy = 'exclude'
     group = 'Build'
-
     description "Builds the pack for Minecraft 1.7"
     classifier = '1.7'
 
-	from '1.7'
-	from 'common'
-	exclude '**/*.psd'
-	exclude '**/desktop.ini'
+	from unpacked_v1_7
 }
 
 task v1_7_ingame(type:Zip) {
-    duplicatesStrategy = 'exclude'
     group = 'Build'
-
     description "Builds the pack for Minecraft 1.7 without widgets"
     classifier = '1.7-ingame_only'
 
-	from '1.7'
-	from 'common'
-	exclude '**/*.psd'
-	exclude '**/desktop.ini'
-	exclude '**/bars.png'
-	exclude '**/icons.png'
-	exclude '**/resource_packs.png'
-	exclude '**/server_selection.png'
-	exclude '**/widgets.png'
-	exclude '**/world_selection.png'
+	from unpacked_v1_7
+	exclude widgets
+}
+
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+task unpacked_v1_8(type: Copy){
+    duplicatesStrategy = 'exclude'
+	from fileTreeMap['1.8']
+	from unpacked_v1_7
+    exclude excludeList(file('1.8/.exclude'))
+	into "${buildDir}/1.8"
 }
 
 task v1_8(type:Zip) {
     duplicatesStrategy = 'exclude'
     group = 'Build'
-
     description "Builds the pack for Minecraft 1.8"
     classifier = '1.8'
 
-	from '1.8'
-	from '1.7'
-	from 'common'
-	exclude '**/*.psd'
-	exclude '**/desktop.ini'
+	from unpacked_v1_8
 }
 
 task v1_8_ingame(type:Zip) {
     duplicatesStrategy = 'exclude'
     group = 'Build'
-
     description "Builds the pack for Minecraft 1.8 without widgets"
     classifier = '1.8-ingame_only'
 
-	from '1.8'
-	from '1.7'
-	from 'common'
-	exclude '**/*.psd'
-	exclude '**/desktop.ini'
-	exclude '**/bars.png'
-	exclude '**/icons.png'
-	exclude '**/resource_packs.png'
-	exclude '**/server_selection.png'
-	exclude '**/widgets.png'
-	exclude '**/world_selection.png'
+	from unpacked_v1_8
+	exclude widgets
+}
+
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+task unpacked_v1_9(type: Copy){
+    duplicatesStrategy = 'exclude'
+	from fileTreeMap['1.9']
+	from unpacked_v1_8
+    exclude excludeList(file('1.9/.exclude'))
+	into "${buildDir}/1.9"
 }
 
 task v1_9(type:Zip) {
     duplicatesStrategy = 'exclude'
     group = 'Build'
-
     description "Builds the pack for Minecraft 1.9"
     classifier = '1.9'
 
-	from '1.9'
-	from '1.8'
-	from '1.7'
-	from 'common'
-	exclude '**/*.psd'
-	exclude '**/desktop.ini'
+	from unpacked_v1_9
 }
 
 task v1_9_ingame(type:Zip) {
     duplicatesStrategy = 'exclude'
     group = 'Build'
-
     description "Builds the pack for Minecraft 1.9 without widgets"
     classifier = '1.9-ingame_only'
 
-	from '1.9'
-	from '1.8'
-	from '1.7'
-	from 'common'
-	exclude '**/*.psd'
-	exclude '**/desktop.ini'
-	exclude '**/bars.png'
-	exclude '**/icons.png'
-	exclude '**/resource_packs.png'
-	exclude '**/server_selection.png'
-	exclude '**/widgets.png'
-	exclude '**/world_selection.png'
+	from unpacked_v1_9
+	exclude widgets
+}
+
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+task unpacked_v1_10(type: Copy){
+    duplicatesStrategy = 'exclude'
+	from fileTreeMap['1.10']
+	from unpacked_v1_9
+    exclude excludeList(file('1.10/.exclude'))
+	into "${buildDir}/1.10"
 }
 
 task v1_10(type:Zip) {
     duplicatesStrategy = 'exclude'
     group = 'Build'
-
     description "Builds the pack for Minecraft 1.10"
     classifier = '1.10'
 
-	from '1.10'
-	from '1.9'
-	from '1.8'
-	from '1.7'
-	from 'common'
-	exclude '**/*.psd'
-	exclude '**/desktop.ini'
+	from unpacked_v1_10
 }
 
 task v1_10_ingame(type:Zip) {
     duplicatesStrategy = 'exclude'
     group = 'Build'
-
     description "Builds the pack for Minecraft 1.10 without widgets"
     classifier = '1.10-ingame_only'
 
-	from '1.10'
-	from '1.9'
-	from '1.8'
-	from '1.7'
-	from 'common'
-	exclude '**/*.psd'
-	exclude '**/desktop.ini'
-	exclude '**/bars.png'
-	exclude '**/icons.png'
-	exclude '**/resource_packs.png'
-	exclude '**/server_selection.png'
-	exclude '**/widgets.png'
-	exclude '**/world_selection.png'
+	from unpacked_v1_10
+	exclude widgets
+}
+
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+task unpacked_v1_11(type: Copy){
+    duplicatesStrategy = 'exclude'
+	from fileTreeMap['1.11']
+	from unpacked_v1_10
+    exclude excludeList(file('1.11/.exclude'))
+	into "${buildDir}/1.11"
 }
 
 task v1_11(type:Zip) {
     duplicatesStrategy = 'exclude'
     group = 'Build'
-
     description "Builds the pack for Minecraft 1.11"
     classifier = '1.11'
 
-	from '1.11'
-	from '1.10'
-	from '1.9'
-	from '1.8'
-	from '1.7'
-	from 'common'
-	exclude '**/*.psd'
-	exclude '**/desktop.ini'
+	from unpacked_v1_11
 }
 
 task v1_11_ingame(type:Zip) {
     duplicatesStrategy = 'exclude'
     group = 'Build'
-
     description "Builds the pack for Minecraft 1.11 without widgets"
     classifier = '1.11-ingame_only'
 
-	from '1.11'
-	from '1.10'
-	from '1.9'
-	from '1.8'
-	from '1.7'
-	from 'common'
-	exclude '**/*.psd'
-	exclude '**/desktop.ini'
-	exclude '**/bars.png'
-	exclude '**/icons.png'
-	exclude '**/resource_packs.png'
-	exclude '**/server_selection.png'
-	exclude '**/widgets.png'
-	exclude '**/world_selection.png'
+	from unpacked_v1_11
+	exclude widgets
+}
+
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+task unpacked_v1_12(type: Copy){
+    duplicatesStrategy = 'exclude'
+	from fileTreeMap['1.12']
+	from unpacked_v1_11
+    exclude excludeList(file('1.12/.exclude'))
+	into "${buildDir}/1.12"
 }
 
 task v1_12(type:Zip) {
     duplicatesStrategy = 'exclude'
     group = 'Build'
-
     description "Builds the pack for Minecraft 1.12"
     classifier = '1.12'
 
-	from '1.12'
-	from '1.11'
-	from '1.10'
-	from '1.9'
-	from '1.8'
-	from '1.7'
-	from 'common'
-	exclude '**/*.psd'
-	exclude '**/desktop.ini'
+	from unpacked_v1_12
 }
 
 task v1_12_ingame(type:Zip) {
     duplicatesStrategy = 'exclude'
     group = 'Build'
-
     description "Builds the pack for Minecraft 1.12 without widgets"
     classifier = '1.12-ingame_only'
 
-	from '1.12'
-	from '1.11'
-	from '1.10'
-	from '1.9'
-	from '1.8'
-	from '1.7'
-	from 'common'
-	exclude '**/*.psd'
-	exclude '**/desktop.ini'
-	exclude '**/bars.png'
-	exclude '**/icons.png'
-	exclude '**/resource_packs.png'
-	exclude '**/server_selection.png'
-	exclude '**/widgets.png'
-	exclude '**/world_selection.png'
+	from unpacked_v1_12
+	exclude widgets
+}
+
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+def excludeList(File f) {
+    def ignores = []
+    if (f.isFile()) {
+        f.eachLine { line ->
+            //ignore comments and empty lines
+            if (!line.startsWith('#') && !line.isEmpty()) {
+                ignores.add(line)
+            }
+        }
+    }
+    return ignores
+}
+
+def makeTree(dirSpec) {
+    return fileTree(dirSpec) {
+        exclude '**/*.psd'
+        exclude '**/desktop.ini'
+        exclude '.exclude'
+    }
 }
