@@ -50,6 +50,7 @@ def widgets = [
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 task unpacked_v1_7(type: Copy){
+    includeEmptyDirs = false
     duplicatesStrategy = 'exclude'
 	from fileTreeMap['1.7']
 	from fileTreeMap['common']
@@ -77,6 +78,7 @@ task v1_7_ingame(type:Zip) {
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 task unpacked_v1_8(type: Copy){
+    includeEmptyDirs = false
     duplicatesStrategy = 'exclude'
 	from fileTreeMap['1.8']
 	from unpacked_v1_7
@@ -106,6 +108,7 @@ task v1_8_ingame(type:Zip) {
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 task unpacked_v1_9(type: Copy){
+    includeEmptyDirs = false
     duplicatesStrategy = 'exclude'
 	from fileTreeMap['1.9']
 	from unpacked_v1_8
@@ -135,6 +138,7 @@ task v1_9_ingame(type:Zip) {
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 task unpacked_v1_10(type: Copy){
+    includeEmptyDirs = false
     duplicatesStrategy = 'exclude'
 	from fileTreeMap['1.10']
 	from unpacked_v1_9
@@ -164,6 +168,7 @@ task v1_10_ingame(type:Zip) {
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 task unpacked_v1_11(type: Copy){
+    includeEmptyDirs = false
     duplicatesStrategy = 'exclude'
 	from fileTreeMap['1.11']
 	from unpacked_v1_10
@@ -193,6 +198,7 @@ task v1_11_ingame(type:Zip) {
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 task unpacked_v1_12(type: Copy){
+    includeEmptyDirs = false
     duplicatesStrategy = 'exclude'
 	from fileTreeMap['1.12']
 	from unpacked_v1_11
