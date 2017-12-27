@@ -39,6 +39,7 @@ mcVersions.each { it ->
 }
 
 def widgets = [
+	'assets/appleskin/textures/icons.png',
     'assets/minecraft/textures/gui/container/bars.png',
 	'assets/minecraft/textures/gui/icons.png',
 	'assets/minecraft/textures/gui/resource_packs.png',
