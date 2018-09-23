@@ -60,20 +60,24 @@ task unpacked_v1_7(type: Copy){
 }
 
 task v1_7(type:Zip) {
+    includeEmptyDirs = false
     group = 'Build'
     description "Builds the pack for Minecraft 1.7"
     classifier = '1.7'
 
 	from unpacked_v1_7
+    exclude excludeList(file('1.7/.exclude_from_zip'))
 }
 
 task v1_7_ingame(type:Zip) {
+    includeEmptyDirs = false
     group = 'Build'
     description "Builds the pack for Minecraft 1.7 without widgets"
     classifier = '1.7-ingame_only'
 
 	from unpacked_v1_7
 	exclude widgets
+    exclude excludeList(file('1.7/.exclude_from_zip'))
 }
 
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -88,15 +92,18 @@ task unpacked_v1_8(type: Copy){
 }
 
 task v1_8(type:Zip) {
+    includeEmptyDirs = false
     duplicatesStrategy = 'exclude'
     group = 'Build'
     description "Builds the pack for Minecraft 1.8"
     classifier = '1.8'
 
 	from unpacked_v1_8
+    exclude excludeList(file('1.8/.exclude_from_zip'))
 }
 
 task v1_8_ingame(type:Zip) {
+    includeEmptyDirs = false
     duplicatesStrategy = 'exclude'
     group = 'Build'
     description "Builds the pack for Minecraft 1.8 without widgets"
@@ -104,6 +111,7 @@ task v1_8_ingame(type:Zip) {
 
 	from unpacked_v1_8
 	exclude widgets
+    exclude excludeList(file('1.8/.exclude_from_zip'))
 }
 
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -118,15 +126,18 @@ task unpacked_v1_9(type: Copy){
 }
 
 task v1_9(type:Zip) {
+    includeEmptyDirs = false
     duplicatesStrategy = 'exclude'
     group = 'Build'
     description "Builds the pack for Minecraft 1.9"
     classifier = '1.9'
 
 	from unpacked_v1_9
+    exclude excludeList(file('1.9/.exclude_from_zip'))
 }
 
 task v1_9_ingame(type:Zip) {
+    includeEmptyDirs = false
     duplicatesStrategy = 'exclude'
     group = 'Build'
     description "Builds the pack for Minecraft 1.9 without widgets"
@@ -134,6 +145,7 @@ task v1_9_ingame(type:Zip) {
 
 	from unpacked_v1_9
 	exclude widgets
+    exclude excludeList(file('1.9/.exclude_from_zip'))
 }
 
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -148,15 +160,18 @@ task unpacked_v1_10(type: Copy){
 }
 
 task v1_10(type:Zip) {
+    includeEmptyDirs = false
     duplicatesStrategy = 'exclude'
     group = 'Build'
     description "Builds the pack for Minecraft 1.10"
     classifier = '1.10'
 
 	from unpacked_v1_10
+    exclude excludeList(file('1.10/.exclude_from_zip'))
 }
 
 task v1_10_ingame(type:Zip) {
+    includeEmptyDirs = false
     duplicatesStrategy = 'exclude'
     group = 'Build'
     description "Builds the pack for Minecraft 1.10 without widgets"
@@ -164,6 +179,7 @@ task v1_10_ingame(type:Zip) {
 
 	from unpacked_v1_10
 	exclude widgets
+    exclude excludeList(file('1.10/.exclude_from_zip'))
 }
 
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -178,15 +194,18 @@ task unpacked_v1_11(type: Copy){
 }
 
 task v1_11(type:Zip) {
+    includeEmptyDirs = false
     duplicatesStrategy = 'exclude'
     group = 'Build'
     description "Builds the pack for Minecraft 1.11"
     classifier = '1.11'
 
 	from unpacked_v1_11
+    exclude excludeList(file('1.11/.exclude_from_zip'))
 }
 
 task v1_11_ingame(type:Zip) {
+    includeEmptyDirs = false
     duplicatesStrategy = 'exclude'
     group = 'Build'
     description "Builds the pack for Minecraft 1.11 without widgets"
@@ -194,6 +213,7 @@ task v1_11_ingame(type:Zip) {
 
 	from unpacked_v1_11
 	exclude widgets
+    exclude excludeList(file('1.11/.exclude_from_zip'))
 }
 
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -208,15 +228,18 @@ task unpacked_v1_12(type: Copy){
 }
 
 task v1_12(type:Zip) {
+    includeEmptyDirs = false
     duplicatesStrategy = 'exclude'
     group = 'Build'
     description "Builds the pack for Minecraft 1.12"
     classifier = '1.12'
 
 	from unpacked_v1_12
+    exclude excludeList(file('1.12/.exclude_from_zip'))
 }
 
 task v1_12_ingame(type:Zip) {
+    includeEmptyDirs = false
     duplicatesStrategy = 'exclude'
     group = 'Build'
     description "Builds the pack for Minecraft 1.12 without widgets"
@@ -224,6 +247,7 @@ task v1_12_ingame(type:Zip) {
 
 	from unpacked_v1_12
 	exclude widgets
+    exclude excludeList(file('1.12/.exclude_from_zip'))
 }
 
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -246,5 +270,6 @@ def makeTree(dirSpec) {
         exclude '**/*.psd'
         exclude '**/desktop.ini'
         exclude '.exclude'
+        exclude '.exclude_from_zip'
     }
 }
