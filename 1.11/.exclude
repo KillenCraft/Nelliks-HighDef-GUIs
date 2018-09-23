@@ -10,3 +10,5 @@ assets/jeresources/textures/gui/JEIMobGUI.png
 assets/jeresources/textures/gui/JEIPlantGUI.png
 assets/jeresources/textures/gui/JEIVillagerGUI.png
 assets/jeresources/textures/gui/JEIWorldGenGUI.png
+assets/architecturecraft/**
+assets/railcraft/**
