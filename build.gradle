@@ -6,7 +6,8 @@ def mcVersions = [
     '1.9',
     '1.10',
     '1.11',
-    '1.12'
+    '1.12',
+    '1.13'
 ]
 
 defaultTasks 'packs'
@@ -26,6 +27,8 @@ task packs {
 	dependsOn 'v1_11_ingame'
 	dependsOn 'v1_12'
 	dependsOn 'v1_12_ingame'
+	dependsOn 'v1_13'
+	dependsOn 'v1_13_ingame'
 }
 
 tasks.assemble.dependsOn 'packs'
@@ -248,6 +251,40 @@ task v1_12_ingame(type:Zip) {
 	from unpacked_v1_12
 	exclude widgets
     exclude excludeList(file('1.12/.exclude_from_zip'))
+}
+
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+task unpacked_v1_13(type: Copy){
+    includeEmptyDirs = false
+    duplicatesStrategy = 'exclude'
+	from fileTreeMap['1.13']
+	from unpacked_v1_11
+    exclude excludeList(file('1.13/.exclude'))
+	into "${buildDir}/1.13"
+}
+
+task v1_13(type:Zip) {
+    includeEmptyDirs = false
+    duplicatesStrategy = 'exclude'
+    group = 'Build'
+    description "Builds the pack for Minecraft 1.13"
+    classifier = '1.13'
+
+	from unpacked_v1_13
+    exclude excludeList(file('1.13/.exclude_from_zip'))
+}
+
+task v1_13_ingame(type:Zip) {
+    includeEmptyDirs = false
+    duplicatesStrategy = 'exclude'
+    group = 'Build'
+    description "Builds the pack for Minecraft 1.13 without widgets"
+    classifier = '1.13-ingame_only'
+
+	from unpacked_v1_13
+	exclude widgets
+    exclude excludeList(file('1.13/.exclude_from_zip'))
 }
 
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
