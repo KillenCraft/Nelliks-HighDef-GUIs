@@ -1,7 +1,7 @@
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
-<svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="300px" height="300px" viewBox="0 0 3000 3000" preserveAspectRatio="xMidYMid meet">
-<g id="layer101" fill="#000000" stroke="none">
- <path d="M970 2998 c0 -2 96 -280 213 -618 l213 -615 -405 -3 c-223 -1 -409 -6 -413 -10 -7 -7 1397 -1727 1427 -1747 8 -5 16 -7 19 -4 3 2 -91 281 -208 619 l-212 615 405 3 c223 1 409 6 413 10 10 10 -1416 1746 -1437 1750 -8 2 -15 2 -15 0z"/>
- </g>
-
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 185 300" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
+    <g transform="matrix(1,0,0,1,-57.7974,0.040954)">
+        <path id="layer101" d="M97,299.8C97,299.6 106.6,271.8 118.3,238L139.6,176.5L99.1,176.2C76.8,176.1 58.2,175.6 57.8,175.2C57.1,174.5 197.5,2.5 200.5,0.5C201.3,0 202.1,-0.2 202.4,0.1C202.7,0.3 193.3,28.2 181.6,62L160.4,123.5L200.9,123.8C223.2,123.9 241.8,124.4 242.2,124.8C243.2,125.8 100.6,299.4 98.5,299.8C97.7,300 97,300 97,299.8Z" style="fill:rgb(77,77,77);fill-rule:nonzero;"/>
+    </g>
 </svg>
