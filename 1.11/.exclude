@@ -1,3 +1,4 @@
+assets/architecturecraft/**
 assets/ironchest/textures/gui/coppercontainer.png
 assets/ironchest/textures/gui/diamondcontainer.png
 assets/ironchest/textures/gui/dirtcontainer.png
@@ -10,5 +11,5 @@ assets/jeresources/textures/gui/JEIMobGUI.png
 assets/jeresources/textures/gui/JEIPlantGUI.png
 assets/jeresources/textures/gui/JEIVillagerGUI.png
 assets/jeresources/textures/gui/JEIWorldGenGUI.png
-assets/architecturecraft/**
 assets/railcraft/**
+assets/thermalexpansion/textures/gui/device/extender.png
