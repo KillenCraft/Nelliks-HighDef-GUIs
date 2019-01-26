@@ -12,4 +12,5 @@ assets/jeresources/textures/gui/JEIPlantGUI.png
 assets/jeresources/textures/gui/JEIVillagerGUI.png
 assets/jeresources/textures/gui/JEIWorldGenGUI.png
 assets/railcraft/**
-assets/thermalexpansion/textures/gui/device/extender.png
+assets/thermalexpansion/textures/gui/elements/slots_crafter.png
+assets/thermalexpansion/textures/gui/elements/slots_crafter_cb.png
