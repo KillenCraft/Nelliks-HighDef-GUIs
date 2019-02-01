@@ -1,4 +1,11 @@
 assets/avaritia/textures/gui/dire_autocrafting_gui.png
+assets/chisel/textures/autochisel-gui.png
+assets/chisel/textures/chisel-gui.png
+assets/chisel/textures/chisel-gui-24.png
+assets/chisel/textures/chisel2GuiAlt.png
+assets/chisel/textures/chisel2GuiScroll.png
+assets/chisel/textures/chiselNEI.png
+assets/chisel/textures/present-gui.png
 assets/cofh/**
 assets/cosmeticarmor/*
 assets/thermaldynamics/*
