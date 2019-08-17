@@ -259,7 +259,7 @@ task unpacked_v1_13(type: Copy){
     includeEmptyDirs = false
     duplicatesStrategy = 'exclude'
 	from fileTreeMap['1.13']
-	from unpacked_v1_11
+	from unpacked_v1_12
     exclude excludeList(file('1.13/.exclude'))
 	into "${buildDir}/1.13"
 }
