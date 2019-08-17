@@ -2,18 +2,20 @@
 
 A minecraft Resource Pack that replaces GUI windows with High Def versions.
 
-* * *
+---
 
 ![Nellik's GUIs](https://media-elerium.cursecdn.com/attachments/211/716/deck.png)
 
 #### Contributing
 
 ##### Code of Conduct
+
 Please note that this project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
 
 #### Attribution
 
-Some small elements from 'Isabella' by Brad 'Bonemouse' Morris used by permission.
+- Some small elements from 'Isabella' by Brad 'Bonemouse' Morris used by permission.
+- Some elements from Faithful 32 Modded Edition included by license. See https://github.com/F32Organization/.
 
 #### License
 
@@ -21,7 +23,7 @@ Nellik's GUIs by [ScottKillen](https://minecraft.curseforge.com/projects/nelliks
 
 ![Creative Commons License](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)
 
-* * *
+---
 
 ### Assembling this pack
 

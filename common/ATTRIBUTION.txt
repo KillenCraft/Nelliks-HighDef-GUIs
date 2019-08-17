@@ -6,4 +6,5 @@ A minecraft Resource Pack that replaces GUI windows with High Def versions.
 
 #### Attribution
 
-Some small elements from 'Isabella' by Brad 'Bonemouse' Morris used by permission.
+* Some small elements from 'Isabella' by Brad 'Bonemouse' Morris used by permission.
+* Some elements from Faithful 32 Modded Edition included by license. See https://github.com/F32Organization/.
