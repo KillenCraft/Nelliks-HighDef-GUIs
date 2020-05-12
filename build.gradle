@@ -8,7 +8,8 @@ def mcVersions = [
     '1.11',
     '1.12',
     '1.13',
-    '1.14'
+    '1.14',
+    '1.15'
 ]
 
 defaultTasks 'packs'
@@ -32,6 +33,8 @@ task packs {
 	dependsOn 'v1_13_ingame'
 	dependsOn 'v1_14'
 	dependsOn 'v1_14_ingame'
+	dependsOn 'v1_15'
+	dependsOn 'v1_15_ingame'
 }
 
 tasks.assemble.dependsOn 'packs'
@@ -322,6 +325,40 @@ task v1_14_ingame(type:Zip) {
 	from unpacked_v1_14
 	exclude widgets
     exclude excludeList(file('1.14/.exclude_from_zip'))
+}
+
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+task unpacked_v1_15(type: Copy){
+    includeEmptyDirs = false
+    duplicatesStrategy = 'exclude'
+	from fileTreeMap['1.15']
+	from unpacked_v1_14
+    exclude excludeList(file('1.15/.exclude'))
+	into "${buildDir}/1.15"
+}
+
+task v1_15(type:Zip) {
+    includeEmptyDirs = false
+    duplicatesStrategy = 'exclude'
+    group = 'Build'
+    description "Builds the pack for Minecraft 1.15"
+    classifier = '1.15'
+
+	from unpacked_v1_15
+    exclude excludeList(file('1.15/.exclude_from_zip'))
+}
+
+task v1_15_ingame(type:Zip) {
+    includeEmptyDirs = false
+    duplicatesStrategy = 'exclude'
+    group = 'Build'
+    description "Builds the pack for Minecraft 1.15 without widgets"
+    classifier = '1.15-ingame_only'
+
+	from unpacked_v1_15
+	exclude widgets
+    exclude excludeList(file('1.15/.exclude_from_zip'))
 }
 
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
