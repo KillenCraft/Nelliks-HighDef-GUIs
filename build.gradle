@@ -309,7 +309,7 @@ task v1_14(type:Zip) {
     classifier = '1.14'
 
 	from unpacked_v1_14
-    exclude excludeList(file('1.13/.exclude_from_zip'))
+    exclude excludeList(file('1.14/.exclude_from_zip'))
 }
 
 task v1_14_ingame(type:Zip) {
