@@ -1,9 +1,0 @@
-# Nellik's HighDef GUIs
-
-A minecraft Resource Pack that replaces GUI windows with High Def versions.
-
-* * *
-
-#### License
-
-Nellik's HighDef GUIs by ScottKillen is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
