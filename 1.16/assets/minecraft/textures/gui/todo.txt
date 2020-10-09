@@ -1,0 +1,3 @@
+accessibility.png
+smithing.png
+gamemode_switcher.png
