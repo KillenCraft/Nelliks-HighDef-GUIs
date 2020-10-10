@@ -4,7 +4,7 @@ A minecraft Resource Pack that replaces GUI windows with High Def versions.
 
 ---
 
-![Maintenance](https://img.shields.io/maintenance/yes/2020?style=for-the-badge) ![GitHub last commit](https://img.shields.io/github/last-commit/scottkillen-minecraft-textures/Nellik-s-HighDef-GUIs?style=for-the-badge&logo=github)
+![Maintenance](https://img.shields.io/maintenance/20/2020?style=for-the-badge) ![GitHub last commit](https://img.shields.io/github/last-commit/scottkillen-minecraft-textures/Nellik-s-HighDef-GUIs?style=for-the-badge&logo=github)
 
 ---
 
